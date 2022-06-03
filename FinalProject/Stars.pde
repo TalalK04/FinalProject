@@ -8,7 +8,7 @@ void stars() {
       stars[i] = new Ball (starX, starY, starDiameter);
       float d = dist(starX, starY, stars[i].x, stars[i].y);
       int j = i;
-
+      
       while (j>=0) {
         if ( d > (stars[j].diameter*1/2 + starDiameter*1/2) ) {
           starX = random (net.xLeftNetGetter()+starDiameter*1/2, net.xRightNetGetter()-starDiameter*1/2);

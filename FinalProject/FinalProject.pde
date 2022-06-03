@@ -37,7 +37,7 @@ void draw() {
   }
   for (int i=0; i<ballCounter; i++ ) {
     if (ball[i].leftGoalGetter() == true || ball[i].rightGoalGetter() == true) {
-      //println("Goalll");
+  
       restart = true;
       ball[i].resetBall();
       goalScored();
