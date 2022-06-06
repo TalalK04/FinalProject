@@ -1,3 +1,4 @@
 # FinalProject
 
-Rewriting OOP Pong to and adding FINAL to methods and classes
+Rewriting OOP Pong and adding FINAL to methods and classes
+Fully functional Pong game with encapsulated variables
