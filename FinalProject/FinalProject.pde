@@ -55,7 +55,7 @@ void gameStart() {
   }//end ball.draw
    for ( Ball star : stars) {
      if (enterStars == true) star.starDraw();
-  }//end for population
+  }//end FOR
   //gameStart = true;
 }//end gameStart
 
