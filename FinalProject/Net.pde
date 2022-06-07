@@ -1,4 +1,4 @@
-class Net {
+final class Net {
   float x1LeftNet, y1LeftNet, x2LeftNet, y2LeftNet; // left net line
   float x1RightNet, y1RightNet, x2RightNet, y2RightNet; //right net line
   float x1MiddleLine, y1MiddleLine, x2MiddleLine, y2MiddleLine; //middle line
@@ -11,7 +11,7 @@ class Net {
     y2MiddleLine = y2RightNet = y2LeftNet = height;
   }// end Constructor
 
-  void draw() {
+  final public void draw() {
     stroke(255); 
     line(x1LeftNet, y1LeftNet, x2LeftNet, y2LeftNet);
     line(x1RightNet, y1RightNet, x2RightNet, y2RightNet);

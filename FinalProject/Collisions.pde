@@ -1,5 +1,3 @@
-void ballCollisions() {
-}//end ballCollisions
 
 void starCollisions() {
   for (int i = 0; i < starCounter; i++) {

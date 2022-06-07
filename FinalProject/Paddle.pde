@@ -5,7 +5,7 @@
  [Advanced Option] Curved Paddle, deflects and different angles
  */
 
-class Paddle {
+final class Paddle {
   //Global Variables
   private color colour;
   private float xPaddleLeft, yPaddleLeft, widthPaddle, heightPaddle, xPaddleRight, yPaddleRight;
@@ -26,7 +26,7 @@ class Paddle {
   
 
   //
-  Paddle(float width, float height) { // General Population
+ Paddle(float width, float height) { // General Population
     if (nightMode == false) this.colour = color(int (random(100, 255)), int (random(50, 255)), int (random(175, 255)));
     if (nightMode == true) this.colour = color(int (random(100, 255)), int (random(50, 255)), 0);
     widthPaddle = int(width*1/55);
