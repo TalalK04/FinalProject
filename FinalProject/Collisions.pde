@@ -1,4 +1,3 @@
-
 void starCollisions() {
   for (int i = 0; i < starCounter; i++) {
     for ( int j=0; j<ballCounter; j++ ) {

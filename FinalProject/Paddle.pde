@@ -82,6 +82,12 @@ final class Paddle {
     if (rightDown == true) {
       yPaddleRight = yPaddleRight + rightPaddleVelocity;
     } 
+        if (leftStop == true) {
+      yPaddleLeft = yPaddleLeft + leftPaddleVelocity;
+    }  
+    if (rightStop == true) {
+      yPaddleRight = yPaddleRight - rightPaddleVelocity;
+    } 
  
     if (yPaddleLeft >= (height-heightPaddle)) yPaddleLeft = height - heightPaddle; 
     if (yPaddleLeft < height*0) yPaddleLeft = height*0; 

@@ -94,6 +94,9 @@ void keyPressed() {
   if ((key == 'S' || key == 's') && (paddle.singlePlayerGetter() == true || paddle.twoPlayerGetter() == true)) {
     paddle.leftDownSetter();
   } 
+   if ((key == 'D' || key == 'd') && (paddle.singlePlayerGetter() == true || paddle.twoPlayerGetter() == true)) {
+    paddle.leftDownSetter();
+  } 
 
   if ((paddle.leftPaddleVelocity == 0) && (key == 'e'|| key == 'E')) { //easy
     paddle.leftPaddleVelocity = 2;
