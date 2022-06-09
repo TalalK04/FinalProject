@@ -25,8 +25,8 @@ private class Ball {
     xStart = x; //Location Specifically at Game Start, middle of field
     yStart = y;
     diameter =  width*1/30;
-    //xSpeed = int ( random (width/width, width/width*5) );
-    //ySpeed = int ( random (height/height, height/height*5) );
+    xSpeed = int ( random (width/width, width/width*5) );
+    ySpeed = int ( random (height/height, height/height*5) );
     while (xSpeed>-4 && xSpeed<4) xSpeed = int(random( -5, 5));
     while (ySpeed>-4 && ySpeed<4) ySpeed = int(random( -5, 5));
     if (nightMode == false) this.colour = color(int (random(100, 255)), int (random(50, 255)), int (random(175, 255)));

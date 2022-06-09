@@ -95,7 +95,7 @@ void keyPressed() {
     paddle.leftDownSetter();
   } 
    if ((key == 'D' || key == 'd') && (paddle.singlePlayerGetter() == true || paddle.twoPlayerGetter() == true)) {
-    paddle.leftDownSetter();
+    paddle.leftStopSetter();
   } 
 
   if ((paddle.leftPaddleVelocity == 0) && (key == 'e'|| key == 'E')) { //easy
@@ -121,6 +121,10 @@ void keyPressed() {
   if ((key == CODED && keyCode == DOWN)  && (paddle.twoPlayerGetter() == true)) {
     paddle.rightDownSetter();
   } 
+    if ((key == CODED && keyCode == RIGHT)  && (paddle.twoPlayerGetter() == true)) {
+    paddle.rightStopSetter();
+  } 
+  
 
   if ((paddle.rightPaddleVelocity == 0) && (key == '1')) { //easy
     paddle.rightPaddleVelocity = 2;
