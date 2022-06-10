@@ -1,5 +1,5 @@
 // Global Variables And Objects
-
+//
 int mouse = 0;
 int ballCount = 10;
 int starCounter = 4;
