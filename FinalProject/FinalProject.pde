@@ -1,4 +1,4 @@
-// Global Variables And Objects
+//Global Variables And Objects
 //
 int mouse = 0;
 int ballCount = 10;
