@@ -1,4 +1,4 @@
-/* Ideas - Abstract
+/*Ideas - Abstract
  Change the Ball Colour based on direction or collision
  Change the speed of the ball based on the score of the game
  Change the colour of the ball at a specific level/score

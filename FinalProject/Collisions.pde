@@ -9,4 +9,4 @@ void starCollisions() {
       }//end IF
     }//end star FOR
   }//end ball FOR
-}//end starCollisions
+}//End starCollisions

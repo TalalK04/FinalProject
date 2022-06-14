@@ -1,4 +1,4 @@
-/* Ideas: Abstract
+/*Ideas: Abstract
  Paddle as a Pin-Ball-Lookalike in the middle of the table
  Make the paddle smaller with more points
  [Advanced Option] 360 degrees full rotation for the ball/paddles

@@ -9,7 +9,7 @@ final class Net {
     x2RightNet = x1RightNet = width*39/40;
     y1MiddleLine = y1RightNet = y1LeftNet = height*0;
     y2MiddleLine = y2RightNet = y2LeftNet = height;
-  }// end Constructor
+  }//end Constructor
 
   final public void draw() {
     stroke(255); 

@@ -1,7 +1,7 @@
 void stars() {
   while (overlapping == true) {
     for ( int i=0; i<starCounter; i++ ) {
-      //starX = random (net.xLeftNetGetter()+starDiameter*1/2, net.xRightNetGetter()-starDiameter*1/2);
+       //starX = random (net.xLeftNetGetter()+starDiameter*1/2, net.xRightNetGetter()-starDiameter*1/2);
       starX = random (width*1/4, width*3/4);
       starY = random (paddle.heightScoreGetter()+starDiameter*1/2, height - paddle.heightScoreGetter());
       starDiameter = width*1/20;
