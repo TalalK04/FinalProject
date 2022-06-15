@@ -56,6 +56,7 @@ final class Paddle {
         yPaddleLeft = ball[i].ballYGetter() - heightPaddle*1/2;
       }//end IF
     }//end FOR
+    
   }//end leftPaddle
 
   void rightPaddle() {

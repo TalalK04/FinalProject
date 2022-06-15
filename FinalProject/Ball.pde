@@ -11,12 +11,14 @@
 
 private class Ball {
   //Global Variables
-  private float x, y, diameter, xStart, yStart, xDirection, yDirection;
+  private float x, y, diameter, xStart, yStart, xDirection=1, yDirection=1;
   private color colour, colourReset = #FFFFFF;
   private int xSpeed, ySpeed;
   private boolean rightGoal = false, leftGoal = false;
   private boolean godMode = false;
   private boolean nightMode = false;
+  private boolean leftPaddleHit = false;
+  private boolean rightPaddleHit = false;
   private int bounce = 0;
 
   private Ball(float width, float height) { 
@@ -25,8 +27,8 @@ private class Ball {
     xStart = x; //Location Specifically at Game Start, middle of field
     yStart = y;
     diameter =  width*1/30;
-    xSpeed = int ( random (width/width, width/width*5) );
-    ySpeed = int ( random (height/height, height/height*5) );
+    //xSpeed = int ( random (width/width, width/width*5) );
+    //ySpeed = int ( random (height/height, height/height*5) );
     while (xSpeed>-4 && xSpeed<4) xSpeed = int(random( -5, 5));
     while (ySpeed>-4 && ySpeed<4) ySpeed = int(random( -5, 5));
     if (nightMode == false) this.colour = color(int (random(100, 255)), int (random(50, 255)), int (random(175, 255)));
@@ -54,6 +56,7 @@ private class Ball {
     Goal();
     bounceCount();
     bounceStar();
+    momentumBall();
   }// end draw
 
   public void starDraw() {
@@ -70,8 +73,8 @@ private class Ball {
   }// end draw
 
   private void ballMove() {
-    x += xSpeed;
-    y += ySpeed;
+    x += xSpeed*xDirection;
+    y += ySpeed*yDirection;
   }//end move
 
   private void bounceWall() {
@@ -85,11 +88,15 @@ private class Ball {
     if ((x <= paddle.xPaddleLeft + (paddle.widthPaddle + diameter*1/2)) && ((y >= paddle.yPaddleLeft) && (y <= (paddle.yPaddleLeft + paddle.heightPaddle)))) {
       xSpeed *= -1;
       bounce += 1;
-    } else bounce += 0;
+      leftPaddleHit = true;
+    } else bounce += 0; 
+    leftPaddleHit = false;
     if ((x >= paddle.xPaddleRight - (diameter*1/2)) && ((y >= paddle.yPaddleRight) && (y <= (paddle.yPaddleRight + paddle.heightPaddle)))) {
       xSpeed*=-1;
       bounce += 1;
-    } else bounce += 0;
+      rightPaddleHit = true;
+    } else bounce += 0; 
+    rightPaddleHit = false;
   }//end bouncePaddle
 
   private void bounceStar() {
@@ -153,6 +160,30 @@ private class Ball {
     xSpeed = 0;
     ySpeed = 0;
   }//end resetBall
+
+  void momentumBall() {
+    if (paddle.leftUp == true && leftPaddleHit == true) {
+      yDirection = 0.5;
+      xDirection = 0.8;
+    }
+    if (paddle.rightUp == true && rightPaddleHit == true) {
+      yDirection = 0.5;
+      xDirection = 0.8;
+    }
+    if (paddle.leftDown == true && leftPaddleHit == true) {
+      yDirection = 3;
+      xDirection = 1.5;
+    }
+    if (paddle.rightDown == true && rightPaddleHit == true) {
+      yDirection = 3;
+      xDirection = 1.5;
+    }
+
+    if (paddle.rightStop == true && rightPaddleHit == true) {
+      xDirection = 1;
+      yDirection = 1;
+    }
+  }//end momentumBall
 
 
   boolean rightGoalGetter() {
