@@ -1,6 +1,6 @@
 # FinalProject
 
-Purpose:
+Purpose: Pong is used as a training program that teaches all the basic concepts for coding as well as incredibly complex ones as more things get added
 
 Description: Rewriting OOP Pong and adding FINAL to methods and classes. Fully functional Pong game with encapsulated variables
 
