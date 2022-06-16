@@ -11,7 +11,7 @@
 
 final private class Ball {
   //Global Variables
-  private float x, y, diameter, xStart, yStart, xDirection=1, yDirection=1;
+ final private float x, y,xStart, yStart, diameter, xDirection=1, yDirection=1;
   private color colour, colourReset = #FFFFFF;
   private int xSpeed, ySpeed;
   private boolean rightGoal = false, leftGoal = false;
