@@ -9,7 +9,7 @@
  - invisible halfway across the screen ... guess the path
  */
 
-private class Ball {
+final private class Ball {
   //Global Variables
   private float x, y, diameter, xStart, yStart, xDirection=1, yDirection=1;
   private color colour, colourReset = #FFFFFF;
@@ -114,7 +114,7 @@ private class Ball {
       xSpeed = 0;
       bounce += 1;
     } else {
-      rightGoal = false; 
+      rightGoal = false;
       paddle.leftScoreGetter();
       bounce += 0;
     }
@@ -123,7 +123,7 @@ private class Ball {
       ySpeed = 0;
       xSpeed = 0;
     } else {
-      leftGoal = false;
+      leftGoal = false;     
       paddle.rightScoreGetter();
     }
 

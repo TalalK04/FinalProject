@@ -5,7 +5,7 @@
  [Advanced Option] Curved Paddle, deflects and different angles
  */
 
-final class Paddle {
+final private class Paddle {
   //Global Variables
   private color colour;
   private float xPaddleLeft, yPaddleLeft, widthPaddle, heightPaddle, xPaddleRight, yPaddleRight;
@@ -26,7 +26,7 @@ final class Paddle {
 
 
   //
-  Paddle(float width, float height) { // General Population
+  private Paddle(float width, float height) { // General Population
     if (nightMode == false) this.colour = color(int (random(100, 255)), int (random(50, 255)), int (random(175, 255)));
     if (nightMode == true) this.colour = color(int (random(100, 255)), int (random(50, 255)), 0);
     widthPaddle = int(width*1/55);
@@ -42,12 +42,12 @@ final class Paddle {
     xRightScore = width*3/4 - widthScore*1/2;
   }//End Constructor
 
-  void draw() {
+  public void draw() {
     leftPaddle();
     rightPaddle();
   }//end draw
 
-  void leftPaddle() {
+  final public void leftPaddle() {
     fill(colour);
     rect(xPaddleLeft, yPaddleLeft, widthPaddle, heightPaddle);
     move();
@@ -59,7 +59,7 @@ final class Paddle {
     
   }//end leftPaddle
 
-  void rightPaddle() {
+  final public void rightPaddle() {
     fill(colour);
     rect(xPaddleRight, yPaddleRight, widthPaddle, heightPaddle);
     move();
@@ -70,7 +70,7 @@ final class Paddle {
     }//end FOR
   }//end rightPaddle
 
-  void move() {
+  final public void move() {
     if (leftUp == true) { 
       yPaddleLeft = yPaddleLeft - leftPaddleVelocity;
     } 
@@ -96,26 +96,26 @@ final class Paddle {
     if (yPaddleRight < height*0) yPaddleRight = height*0;
   }//end move
 
-  void textSetup() {
+  final public void textSetup() {
     titleFont = createFont("Verdana", 55);
   }//End textSetup()
 
-  void preDrawText(float height, color ink, int alignHorizontal, int alignVertical, PFont font) {
+  final public void preDrawText(float height, color ink, int alignHorizontal, int alignVertical, PFont font) {
     fill(ink);
     textAlign(alignHorizontal, alignVertical);
   }//End preDrawText
 
-  void textDraw(float height, color ink, int alignHorizontal, int alignVertical, PFont font, String string, float xScore, float yScore, float widthScore, float heightScore) {
+  final public void textDraw(float height, color ink, int alignHorizontal, int alignVertical, PFont font, String string, float xScore, float yScore, float widthScore, float heightScore) {
     preDrawText(height, ink, alignHorizontal, alignVertical, font);
     textSize(textCalculator(height, string, widthScore));
     text(string, xScore, yScore, widthScore, heightScore);
   }//End textDraw()
 
-  void textReset(color resetColor) {
+  final public void textReset(color resetColor) {
     fill(resetColor);
   }//End textReset
 
-  float textCalculator(float size, String string, float widthScore) {
+  final public float textCalculator(float size, String string, float widthScore) {
     textSize(size);
     while (textWidth(string) > widthScore) {
       size = size*0.99;
@@ -125,7 +125,7 @@ final class Paddle {
     return size;
   }//end textCalculator
 
-  public void leftUpSetter() {
+ final public void leftUpSetter() {
     leftUp = true;
     leftDown = false;
     leftStop = false;

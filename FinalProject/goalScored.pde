@@ -1,10 +1,10 @@
 void goalScored() {
   background(0);
-  for (int i=0; i<ballCounter; i++ ) {//Controls each ball of all 10 (ballCount)
+  for (int i=ball.length-1; i<ballCounter; i-- ) {//Controls each ball of all 10 (ballCount)
     //ballCount = 0;
-    ball[i].resetBall();
+   i--;
     ball[i] = new Ball(width, height);
-    ball[i].ballDraw();
+    //ball[ballCounter].ballDraw();
   }//end ball.draw
   fill(255); 
   textSize(width*1/35);

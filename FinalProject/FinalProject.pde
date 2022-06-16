@@ -2,7 +2,7 @@
 //
 int mouse = 0;
 int ballCount = 10;
-int starCounter = 4;
+int starCounter = 10;
 Ball[] ball = new Ball[ballCount]; //Not just an array, but an array list: includes code and variable
 Ball[] stars = new Ball[starCounter]; 
 int ballCounter = ball.length - ball.length; //How to get 0 but using another value
@@ -35,15 +35,13 @@ void draw() {
   if ((landscapeMode == true)  && (paddle.leftModeGetter() == true && paddle.rightModeGetter() == true) && (paddle.screenSaver == true || paddle.singlePlayer == true || paddle.twoPlayer == true) && restart == false) {
     gameStart();
   }
-  for (int i=0; i<ballCounter; i++ ) {
-    if (ball[i].leftGoalGetter() == true || ball[i].rightGoalGetter() == true) {
   
-      restart = true;
-      ball[i].resetBall();
-      goalScored();
-      if (restart == true ) println("hello");
+  for (int i=0; i<ballCounter; i++) {
+    if (ball[i].leftGoalGetter() == true || ball[i].rightGoalGetter() == true) {
+      goalScored(); 
     }//end IF
   }//end FOR
+  
 }//end draw
 
 void gameStart() {
@@ -80,7 +78,7 @@ void scoreBoardDraw() {
 }//End draw()
 
 void keyPressed() {
-  if (gameStart == false && ( key == CODED && (key == 'r' || key == 'R') )) gameStart(); 
+  if ( key == CODED && (key == 'r' || key == 'R') ) restart = false; 
 
   //nightMode
   //if ((key == 'n' || key == 'N') && (paddle.leftMode == true) ) nightMode = true; paddle.chooseMode = true; 
