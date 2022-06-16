@@ -56,7 +56,6 @@ final private class Paddle {
         yPaddleLeft = ball[i].ballYGetter() - heightPaddle*1/2;
       }//end IF
     }//end FOR
-    
   }//end leftPaddle
 
   final public void rightPaddle() {
@@ -125,7 +124,7 @@ final private class Paddle {
     return size;
   }//end textCalculator
 
- final public void leftUpSetter() {
+  final public void leftUpSetter() {
     leftUp = true;
     leftDown = false;
     leftStop = false;
@@ -155,6 +154,7 @@ final private class Paddle {
     rightDown = false;
     rightUp = false;
   }
+
 
   boolean twoPlayerGetter () {
     return twoPlayer;
