@@ -11,9 +11,9 @@ final private class Ball {
   private int bounce = 0;
 
   private Ball(float width, float height) { 
-    x = width*1/2; //Start Ball Location wherever
+    x = width*1/2; 
     y = height*1/2;
-    xStart = x; //Location Specifically at Game Start, middle of field
+    xStart = x; 
     yStart = y;
     diameter =  width*1/30;
     xDirection = 1;
@@ -27,9 +27,8 @@ final private class Ball {
   }//end Ball Constructor
 
   //Start Star Constructor
- private Ball(float widthParameter, float heightParameter, float diameterParameter) {
-    //THIS is not used here
-    x = widthParameter; //Start Ball Location wherever
+ private Ball(float widthParameter, float heightParameter, float diameterParameter) {  
+    x = widthParameter; 
     y = heightParameter;
     diameter =  diameterParameter;
     colour = color(255);
@@ -170,7 +169,7 @@ final private class Ball {
   }//end bounceCount
 
   final private void resetBall() {
-    x = width*1/2; //Start Ball Location wherever
+    x = width*1/2; //middle of the screen
     y = height*1/2;
     xSpeed = 0;
     ySpeed = 0;

@@ -17,7 +17,7 @@ color colour;
 boolean overlapping = true, enterStars = false, collision = false;
 
 void setup() {
-  ball[ballCounter] = new Ball(width, height); //Start the first ball, need ballCounter
+  ball[ballCounter] = new Ball(width, height); 
   paddle = new Paddle(width, height);
   net = new Net(width, height);
   ballCounter += 1;

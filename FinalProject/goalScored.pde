@@ -1,4 +1,4 @@
-void goalScored() {
+final public void goalScored() {
   background(0);
   restart = true;
   for (int i=ball.length-1; i<ballCounter; i-- ) {

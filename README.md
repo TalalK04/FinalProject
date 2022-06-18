@@ -24,6 +24,10 @@ __List of unfinished Easter Eggs and features:__
 
 Once in the game, before starting you must:
 
+- **Left Paddle Controls:** W (Up) | S (Down) | D (Stop)
+
+- **Right Paddle Controls:** Up Arrow Key | Down Arrow Key | Left Arrow Key (Stop)
+
 - **Choose paddle speed:**
 
   - *Slow (EASY):* RightPaddle (press '1') | LeftPaddle (press 'e')
@@ -31,10 +35,6 @@ Once in the game, before starting you must:
   - *Medium:* RightPaddle (press '2') | LeftPaddle (press 'm')
 
   - *Fast (HARD):* RightPaddle (press '3') | LeftPaddle (press 'h')
-
-- **Left Paddle Controls:** W (Up) | S (Down)
-
-- **Right Paddle Controls:** Up Arrow Key | Down Arrow Key
 
 - **Choose how you want to play:**
 
@@ -44,4 +44,4 @@ Once in the game, before starting you must:
 
   - *ScreenSaver* Press 'c'
 
-- *Paddles will get smaller as the game continues & Ball will begin to move faster as the game progresses
+*Paddles will get smaller as the game continues & Ball will begin to move faster as the game progresses. Good Luck!

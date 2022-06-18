@@ -1,4 +1,4 @@
-void starCollisions() {
+final private void starCollisions() {
   for (int i = 0; i < ballCounter; i++) {
     for (int j=stars.length-1; j>1; j--) {
       float dist = dist(ball[i].x, ball[i].y, stars[j].x, stars[j].y);

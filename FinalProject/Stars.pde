@@ -1,4 +1,4 @@
-void stars() {
+final private void stars() {
   while (overlapping == true) {
     for ( int i=0; i<starCounter; i++ ) {
        //starX = random (net.xLeftNetGetter()+starDiameter*1/2, net.xRightNetGetter()-starDiameter*1/2);
