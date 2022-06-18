@@ -26,12 +26,22 @@ Once in the game, before starting you must:
 
 - **Choose paddle speed:**
 
-  - **Slow** (EASY): RightPaddle (press '1') | LeftPaddle (press 'e')
+  - *Slow (EASY):* RightPaddle (press '1') | LeftPaddle (press 'e')
 
-  - **Medium:** RightPaddle (press '2') | LeftPaddle (press 'm')
+  - *Medium:* RightPaddle (press '2') | LeftPaddle (press 'm')
 
-  - **Fast (HARD):** RightPaddle (press '3') | LeftPaddle (press 'h')
+  - *Fast (HARD):* RightPaddle (press '3') | LeftPaddle (press 'h')
 
 - **Left Paddle Controls:** W (Up) | S (Down)
 
 - **Right Paddle Controls:** Up Arrow Key | Down Arrow Key
+
+- **Choose how you want to play:**
+
+  - *Single Player (you will be controlling the Left Paddle):* Press 'p'
+
+  - *Two Player:* Press 't'
+
+  - *ScreenSaver* Press 'c'
+
+- *Paddles will get smaller as the game continues & Ball will begin to move faster as the game progresses
