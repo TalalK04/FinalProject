@@ -16,7 +16,6 @@ final class Net {
     line(x1LeftNet, y1LeftNet, x2LeftNet, y2LeftNet);
     line(x1RightNet, y1RightNet, x2RightNet, y2RightNet);
     line(x1MiddleLine, y1MiddleLine, x2MiddleLine, y2MiddleLine);
-    //println(x1RightNet);
   }//end netDraw
   
   float xLeftNetGetter(){
@@ -24,6 +23,5 @@ final class Net {
   }
     float xRightNetGetter(){
     return x1RightNet;
-  }
-  
+  }  
 }//end class Net

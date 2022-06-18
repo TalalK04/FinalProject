@@ -1,14 +1,3 @@
-/*Ideas - Abstract
- Change the Ball Colour based on direction or collision
- Change the speed of the ball based on the score of the game
- Change the colour of the ball at a specific level/score
- Introduce multiple balls at a specific level/score
- Unlimited mode, where the ball speeds up over time
- - Note: continuous collision, so the ball can't zip through the paddle
- Ball become invisible for a split second-guessing
- - invisible halfway across the screen ... guess the path
- */
-
 final private class Ball {
   //Global Variables
   private float x, y, xStart, yStart, diameter, xDirection, yDirection;
@@ -38,20 +27,17 @@ final private class Ball {
   }//end Ball Constructor
 
   //Start Star Constructor
-  Ball(float widthParameter, float heightParameter, float diameterParameter) {
+ private Ball(float widthParameter, float heightParameter, float diameterParameter) {
     //THIS is not used here
     x = widthParameter; //Start Ball Location wherever
     y = heightParameter;
     diameter =  diameterParameter;
     colour = color(255);
-    //float diameterParameter
   }//end Star Constructor
 
-  public void ballDraw() {
+  final public void ballDraw() {
     fill(colour);
     ellipse(x, y, diameter, diameter);
-    //fill(colourReset);
-    //
     ballSpeed();
     bounceWall();
     bouncePaddle();
@@ -61,11 +47,9 @@ final private class Ball {
     momentumBall();
   }// end draw
 
-  public void starDraw() {
+  final public void starDraw() {
     fill(colour);
     ellipse(x, y, diameter, diameter);
-    //fill(colourReset);
-
     ballSpeed();
     bounceWall();
     bouncePaddle();
@@ -74,19 +58,19 @@ final private class Ball {
     bounceStar();
   }// end draw
 
-  private void ballSpeed() {
+  final private void ballSpeed() {
     x += xSpeed*xDirection;
     y += ySpeed*yDirection;
   }//end Speed
 
-  private void bounceWall() {
+  final private void bounceWall() {
     if (y-diameter*1/2 < height*0 || y+diameter*1/2 > height) {
       ySpeed *= -1; //Top and Bottom
       bounce += 1;
     } else bounce += 0;
   }//end Bounce
 
-  private void bouncePaddle() {
+  final private void bouncePaddle() {
     if ((x <= paddle.xPaddleLeft + (paddle.widthPaddle + diameter*1/2)) && ((y >= paddle.yPaddleLeft) && (y <= (paddle.yPaddleLeft + paddle.heightPaddle)))) {
       xSpeed *= -1;
       bounce += 1;
@@ -101,7 +85,7 @@ final private class Ball {
     rightPaddleHit = false;
   }//end bouncePaddle
 
-  private void bounceStar() {
+  final private void bounceStar() {
     starCollisions();
     if (collision == true) {
       xSpeed*=-1.2;
@@ -109,7 +93,7 @@ final private class Ball {
     }
   }//end bounceStar
 
-  private void Goal() {
+  final private void Goal() {
     if (rightGoal == true) {
       x = (net.x1RightNet + (diameter*2/3));
       ySpeed = 0;
@@ -129,7 +113,6 @@ final private class Ball {
       paddle.rightScoreGetter();
     }
 
-
     if (x > net.x1RightNet - (diameter*1/2)) {
       rightGoal = true;
       x = width - diameter*1/2;
@@ -142,8 +125,7 @@ final private class Ball {
     }
   }//end Goal
 
-  private void bounceCount() {
-
+  final private void bounceCount() {
     if (bounce >= 1) enterStars = true;
     if (bounce >= 5) hardMode = true;
     if (bounce >= 5) godMode = true;
@@ -187,14 +169,14 @@ final private class Ball {
     }
   }//end bounceCount
 
-  private void resetBall() {
+  final private void resetBall() {
     x = width*1/2; //Start Ball Location wherever
     y = height*1/2;
     xSpeed = 0;
     ySpeed = 0;
   }//end resetBall
 
-  void momentumBall() {
+  final private void momentumBall() {
     if (paddle.leftUp == true && leftPaddleHit == true) {
       yDirection = 0.5;
       xDirection = 0.8;
@@ -239,8 +221,4 @@ final private class Ball {
   int bounceGetter() {
     return bounce;
   }
-
-  //boolean Setter(){
-  // return nightMode = false; 
-  //}
 }//End ball

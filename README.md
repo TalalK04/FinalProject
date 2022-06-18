@@ -22,14 +22,16 @@ __List of unfinished Easter Eggs and features:__
 
 **Instructions on how to use the app:**
 
-- "Choose paddle speed:
+Once in the game, before starting you must:
 
-  - Slow (EASY): RightPaddle (press '1') | LeftPaddle (press 'e')
+- **Choose paddle speed:**
 
-  - Medium: RightPaddle (press '2') | LeftPaddle (press 'm')
+  - **Slow** (EASY): RightPaddle (press '1') | LeftPaddle (press 'e')
 
-  - Fast (HARD): RightPaddle (press '3') | LeftPaddle (press 'h')
+  - **Medium:** RightPaddle (press '2') | LeftPaddle (press 'm')
 
-- Left Paddle Controls: W (Up) | S (Down)
+  - **Fast (HARD):** RightPaddle (press '3') | LeftPaddle (press 'h')
 
-- Right Paddle Controls: Up Arrow Key | Down Arrow Key
+- **Left Paddle Controls:** W (Up) | S (Down)
+
+- **Right Paddle Controls:** Up Arrow Key | Down Arrow Key

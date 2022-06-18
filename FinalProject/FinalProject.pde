@@ -3,9 +3,9 @@
 int mouse = 0;
 int ballCount = 10;
 int starCounter = 10;
-Ball[] ball = new Ball[ballCount]; //Not just an array, but an array list: includes code and variable
+Ball[] ball = new Ball[ballCount]; 
 Ball[] stars = new Ball[starCounter]; 
-int ballCounter = ball.length - ball.length; //How to get 0 but using another value
+int ballCounter = ball.length - ball.length; 
 Paddle paddle;
 Net net;
 boolean landscapeMode = false;
@@ -26,7 +26,7 @@ void setup() {
   stars();
 }//end setup
 
-void draw() {
+final public void draw() {
   background(0);
 
   if (landscapeMode == false) preGameStart();
@@ -44,11 +44,11 @@ void draw() {
   
 }//end draw
 
-void gameStart() {
+final private void gameStart() {
   net.draw();
   paddle.draw();
   scoreBoardDraw();
-  for (int i=0; i<ballCounter; i++ ) {//Controls each ball of all 10 (ballCount)
+  for (int i=0; i<ballCounter; i++ ) {
     ball[i].ballDraw();
   }//end ball.draw
    for ( Ball star : stars) {
@@ -57,7 +57,7 @@ void gameStart() {
   //gameStart = true;
 }//end gameStart
 
-void scoreBoardDraw() {
+final private void scoreBoardDraw() {
   paddle.textSetup();
   rect(paddle.xLeftScoreGetter(), paddle.yLeftScoreGetter(), paddle.widthScoreGetter(), paddle.heightScoreGetter()); //score left
   rect(paddle.xRightScoreGetter(), paddle.yRightScoreGetter(), paddle.widthScoreGetter(), paddle.heightScoreGetter()); //score right
@@ -77,14 +77,8 @@ void scoreBoardDraw() {
   }//end FOR
 }//End draw()
 
-void keyPressed() {
+public void keyPressed() {
   if ( key == CODED && (key == 'r' || key == 'R') ) restart = false; 
-
-  //nightMode
-  //if ((key == 'n' || key == 'N') && (paddle.leftMode == true) ) nightMode = true; paddle.chooseMode = true; 
-  //if ((key == 'q' || key == 'Q') && (paddle.leftMode == true)) nightMode = false; paddle.chooseMode = true; 
-
-
   //Left Paddle
   if ((key == 'W' || key == 'w') && (paddle.singlePlayerGetter() == true || paddle.twoPlayerGetter() == true )) {
     paddle.leftUpSetter();
@@ -136,15 +130,13 @@ void keyPressed() {
   }
 }//end keyPresseded
 
-void mousePressed() {
-  //Easter Egg Example: mousePressed to create another ball instantiation
-
+public void mousePressed() {
   if (ballCounter >= ball.length) {
     exit();
   } else if (landscapeMode == true && (paddle.leftModeGetter() == true && paddle.rightModeGetter() == true) && (paddle.screenSaver == true || paddle.singlePlayer == true || paddle.twoPlayer == true) && restart == false) {
     ballCounter += 1;
   }
-  for (int i=ballCounter - 1; i<ballCounter; i++ ) { //Constructor for other ball objects could be a button
+  for (int i=ballCounter - 1; i<ballCounter; i++ ) { 
 
     ball[i] = new Ball(width, height);
     ball[i].ballDraw();

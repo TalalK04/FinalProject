@@ -1,10 +1,3 @@
-/*Ideas: Abstract
- Paddle as a Pin-Ball-Lookalike in the middle of the table
- Make the paddle smaller with more points
- [Advanced Option] 360 degrees full rotation for the ball/paddles
- [Advanced Option] Curved Paddle, deflects and different angles
- */
-
 final private class Paddle {
   //Global Variables
   private color colour;
@@ -18,13 +11,10 @@ final private class Paddle {
   private boolean screenSaver = false;
   private boolean twoPlayer = false;
   private int leftScore = 0, rightScore = 0;
-
   private float xLeftScore, xRightScore, yLeftScore, yRightScore, widthScore, heightScore;
   private PFont titleFont;
   private color scoreColour = 000000; 
   private boolean chooseMode = false;
-
-
   //
   private Paddle(float width, float height) { // General Population
     if (nightMode == false) this.colour = color(int (random(100, 255)), int (random(50, 255)), int (random(175, 255)));
@@ -42,7 +32,7 @@ final private class Paddle {
     xRightScore = width*3/4 - widthScore*1/2;
   }//End Constructor
 
-  public void draw() {
+  final public void draw() {
     leftPaddle();
     rightPaddle();
   }//end draw
@@ -154,7 +144,6 @@ final private class Paddle {
     rightDown = false;
     rightUp = false;
   }
-
 
   boolean twoPlayerGetter () {
     return twoPlayer;
