@@ -16,4 +16,8 @@ List of Easter Eggs:
 
 List of unfinished Easter Eggs and features:
 
--
+- Star Metaphor:
+
+- Scoreboard:
+
+- 

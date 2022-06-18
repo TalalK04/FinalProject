@@ -11,11 +11,11 @@
 
 final private class Ball {
   //Global Variables
-  private float x, y,xStart, yStart, diameter, xDirection=1, yDirection=1;
+  private float x, y, xStart, yStart, diameter, xDirection, yDirection;
   private color colour, colourReset = #FFFFFF;
   private int xSpeed, ySpeed;
   private boolean rightGoal = false, leftGoal = false;
-  private boolean godMode = false;
+  private boolean hardMode = false, godMode = false;
   private boolean nightMode = false;
   private boolean leftPaddleHit = false;
   private boolean rightPaddleHit = false;
@@ -27,10 +27,12 @@ final private class Ball {
     xStart = x; //Location Specifically at Game Start, middle of field
     yStart = y;
     diameter =  width*1/30;
+    xDirection = 1;
+    yDirection = 1;
     //xSpeed = int ( random (width/width, width/width*5) );
     //ySpeed = int ( random (height/height, height/height*5) );
-    while (xSpeed>-4 && xSpeed<4) xSpeed = int(random( -5, 5));
-    while (ySpeed>-4 && ySpeed<4) ySpeed = int(random( -5, 5));
+    while (xSpeed>-3 && xSpeed<3) xSpeed = int(random( -5, 5));
+    while (ySpeed>-3 && ySpeed<3) ySpeed = int(random( -5, 5));
     if (nightMode == false) this.colour = color(int (random(100, 255)), int (random(50, 255)), int (random(175, 255)));
     if (nightMode == true) this.colour = color(int (random(100, 255)), int (random(50, 255)), 0);
   }//end Ball Constructor
@@ -50,7 +52,7 @@ final private class Ball {
     ellipse(x, y, diameter, diameter);
     //fill(colourReset);
     //
-    ballMove();
+    ballSpeed();
     bounceWall();
     bouncePaddle();
     Goal();
@@ -64,7 +66,7 @@ final private class Ball {
     ellipse(x, y, diameter, diameter);
     //fill(colourReset);
 
-    ballMove();
+    ballSpeed();
     bounceWall();
     bouncePaddle();
     Goal();
@@ -72,10 +74,10 @@ final private class Ball {
     bounceStar();
   }// end draw
 
-  private void ballMove() {
+  private void ballSpeed() {
     x += xSpeed*xDirection;
     y += ySpeed*yDirection;
-  }//end move
+  }//end Speed
 
   private void bounceWall() {
     if (y-diameter*1/2 < height*0 || y+diameter*1/2 > height) {
@@ -141,6 +143,11 @@ final private class Ball {
   }//end Goal
 
   private void bounceCount() {
+
+    if (bounce >= 1) enterStars = true;
+    if (bounce >= 5) hardMode = true;
+    if (bounce >= 5) godMode = true;
+    //
     if (bounce == 5) { 
       paddle.heightPaddle = height*1/6;
     } else if (bounce == 10) { 
@@ -150,8 +157,34 @@ final private class Ball {
     } else if (bounce == 20) { 
       paddle.heightPaddle = height*1/15;
     }
-
-    if (bounce >= 1) enterStars = true;
+    //
+    if (hardMode == true && (xSpeed<0 && ySpeed<0)) {
+      xSpeed = -6;
+      ySpeed = -6;
+    } else if (hardMode == true && (xSpeed>0 && ySpeed>0)) {
+      xSpeed = 6;
+      ySpeed = 6;
+    } else if (hardMode == false && (xSpeed>0 && ySpeed>0)) {
+      xSpeed = 4;
+      ySpeed = 4;
+    } else if (hardMode == false && (xSpeed<0 && ySpeed<0)) {
+      xSpeed = -4;
+      ySpeed = -4;
+    }
+    //
+    if (godMode == true && (xSpeed<0 && ySpeed<0)) {
+      xSpeed = -8;
+      ySpeed = -8;
+    } else if (godMode == true && (xSpeed>0 && ySpeed>0)) {
+      xSpeed = 8;
+      ySpeed = 8;
+    } else if (godMode == false && (xSpeed>0 && ySpeed>0)) {
+      xSpeed = 4;
+      ySpeed = 4;
+    } else if (godMode == false && (xSpeed<0 && ySpeed<0)) {
+      xSpeed = -4;
+      ySpeed = -4;
+    }
   }//end bounceCount
 
   private void resetBall() {
