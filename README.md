@@ -12,6 +12,8 @@ List of Easter Eggs:
 
 - Momentum to Ball: I set the x and y Speed and multiplied it by x and y direction variables. I created a paddleHit boolean which would detect when the ball would hit the paddle. If paddleHit is true and the paddle is moving up or down at that time I set the x and y Direction to a number that would deflect the ball in a different angle other 45 degrees all the time. If the paddles aren't moving when paddleHit is true then the ball would bounce off the paddle at the same angle it hit it.
 
+- Ball speeding up: This feature works similar to the paddle changing size feature as the after a set amount of bounces the speed of the ball becomes faster. All the variables and methods which were used to make the feature fully functional are located in the ball class.
+
 List of unfinished Easter Eggs and features:
 
 -
